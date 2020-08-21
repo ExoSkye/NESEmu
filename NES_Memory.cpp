@@ -2,16 +2,26 @@
 // Created by protobit on 21/08/2020.
 //
 
-#include "memory.hpp"
+#include "NES_Memory.hpp"
 #include <alloca.h>
 #include <string.h>
 
-memory::memory() {
-
+NES_Memory::NES_Memory() {
+    memset(m_Memory, 0, 65535*sizeof(byte));
 }
 
-byte &memory::operator[](uint16_t index) {
-    byte zero = 0;
+byte &NES_Memory::operator[](uint16_t index) {
+    return at(index);
+}
+
+byte *NES_Memory::range(uint16_t start, uint16_t end) {
+    byte* range = (byte*)alloca(sizeof(byte) * end - start);
+    memcpy(range, &m_Memory[start], sizeof(byte) * end - start);
+    return range;
+}
+
+byte &NES_Memory::at(uint16_t index) {
+    byte& zero = *(new byte);
     if (index <= 0x07FF) {
         return m_Memory[index];
     }
@@ -42,10 +52,4 @@ byte &memory::operator[](uint16_t index) {
     else {
         return zero;
     }
-}
-
-byte *memory::range(uint16_t start, uint16_t end) {
-    byte* range = (byte*)alloca(sizeof(byte) * end - start);
-    memcpy(range, &m_Memory[start], sizeof(byte) * end - start);
-    return range;
 }
