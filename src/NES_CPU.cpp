@@ -18,3 +18,7 @@ NES_CPU::m_InstructionStruct NES_CPU::getInstruction(uint8_t instructionOpCode) 
 
     }
 }
+
+void NES_CPU::startExec() {
+    r_ProgramCounter = mem->at(0xFFFC)<<8&mem->at(0xFFFD);
+}

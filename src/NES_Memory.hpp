@@ -16,6 +16,7 @@ public:
     byte& operator[](uint16_t index);
     byte& at(uint16_t index);
     byte* range(uint16_t start, uint16_t end);
+    void loadCartridge(byte* cartridgeData);
 };
 
 

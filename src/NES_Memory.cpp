@@ -47,9 +47,13 @@ byte &NES_Memory::at(uint16_t index) {
         return zero; //TODO: CPU TEST MODE
     }
     else if (index <= 0xFFFF) {
-        return zero; //TODO: ADD CARTRIDGE FUNCTIONALITY
+        return m_Memory[index];
     }
     else {
         return zero;
     }
+}
+
+void NES_Memory::loadCartridge(byte *cartridgeData) {
+    memcpy(&m_Memory[4020],cartridgeData,0xBFDF);
 }

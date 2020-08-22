@@ -32,6 +32,8 @@ public:
     void executeInstruction(uint32_t instruction);
     NES_Memory* mem;
     NES_Stack* stk;
+
+    void startExec();
 };
 
 
