@@ -81,61 +81,61 @@ NES_CPU::m_InstructionStruct NES_CPU::getInstruction(uint8_t instructionOpCode) 
         case 36:
             return m_InstructionStruct{BIT,zpg};
         case 37:
-            break;
+            return m_InstructionStruct{AND,zpg};
         case 38:
-            break;
+            return m_InstructionStruct{ROL,zpg};
         case 39:
-            break;
+            return m_InstructionStruct{noInst,noAddress};
         case 40:
-            break;
+            return m_InstructionStruct{PLP,noAddress};
         case 41:
-            break;
+            return m_InstructionStruct{AND,imm};
         case 42:
-            break;
+            return m_InstructionStruct{ROL,A};
         case 43:
-            break;
+            return m_InstructionStruct{noInst,noAddress};
         case 44:
-            break;
+            return m_InstructionStruct{AND,absolute};
         case 45:
-            break;
+            return m_InstructionStruct{ROL,absolute};
         case 46:
-            break;
+            return m_InstructionStruct{noInst,noAddress};
         case 47:
-            break;
+            return m_InstructionStruct{BMI,rel};
         case 48:
-            break;
+            return m_InstructionStruct{AND,zpgY};
         case 49:
-            break;
+            return m_InstructionStruct{noInst,noAddress};
         case 50:
-            break;
+            return m_InstructionStruct{noInst,noAddress};
         case 51:
-            break;
+            return m_InstructionStruct{noInst,noAddress};
         case 52:
-            break;
+            return m_InstructionStruct{AND,zpgX};
         case 53:
-            break;
+            return m_InstructionStruct{ROL,zpgX};
         case 54:
-            break;
+            return m_InstructionStruct{noInst,noAddress};
         case 55:
-            break;
+            return m_InstructionStruct{SEC,noAddress};
         case 56:
-            break;
+            return m_InstructionStruct{AND,absY};
         case 57:
-            break;
+            return m_InstructionStruct{noInst,noAddress};
         case 58:
-            break;
+            return m_InstructionStruct{noInst,noAddress};
         case 59:
-            break;
+            return m_InstructionStruct{noInst,noAddress};
         case 60:
-            break;
+            return m_InstructionStruct{AND,absX};
         case 61:
-            break;
+            return m_InstructionStruct{ROL,absX};
         case 62:
-            break;
+            return m_InstructionStruct{noInst,noAddress};
         case 63:
-            break;
+            return m_InstructionStruct{RTI, noAddress};
         case 64:
-            break;
+            return m_InstructionStruct{EOR,zpgX};
         case 65:
             break;
         case 66:
