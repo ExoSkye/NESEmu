@@ -15,7 +15,7 @@ private:
         memcpy(&(m_MemoryPTR->at(0x100)),&(m_MemoryPTR->at(0x101)),sizeof(byte)*0xFE);
     };
 public:
-    explicit NES_Stack(NES_Memory* mem) {
+    NES_Stack(NES_Memory* mem) {
         m_MemoryPTR = mem;
     }
     struct stackReturn {
