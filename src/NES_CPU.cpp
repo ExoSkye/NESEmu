@@ -15,6 +15,6 @@ void NES_CPU::executeInstruction(uint32_t instruction) {
 
 NES_CPU::m_InstructionStruct NES_CPU::getInstruction(uint8_t instructionOpCode) {
     switch (instructionOpCode) {
-        
+
     }
 }
