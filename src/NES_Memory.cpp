@@ -5,8 +5,10 @@
 #include "NES_Memory.hpp"
 #include <alloca.h>
 #include <string.h>
+#include <cstdlib>
 
 NES_Memory::NES_Memory() {
+    m_Memory = (byte*)malloc(sizeof(byte)*65535);
     memset(m_Memory, 0, 65535*sizeof(byte));
 }
 

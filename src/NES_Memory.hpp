@@ -10,7 +10,7 @@ typedef int8_t byte;
 
 class NES_Memory {
 private:
-    byte m_Memory[65535];
+    byte* m_Memory;
 public:
     NES_Memory();
     byte& operator[](uint16_t index);

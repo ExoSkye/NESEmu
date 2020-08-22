@@ -5,6 +5,7 @@
 #include "NES_CPU.hpp"
 
 NES_CPU::NES_CPU() {
+    mem = new NES_Memory();
     stk = new NES_Stack(mem);
 }
 
