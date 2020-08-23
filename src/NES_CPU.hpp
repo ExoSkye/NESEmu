@@ -22,9 +22,11 @@ private:
     // ALL 6502 Instructions
     enum m_Instruction { noInst, BRK, BPL, JSR, BMI, RTI, BVC, RTS, BVS, BCC, LDY, BCS, CPY, BNE, CPX, BEQ, ORA, AND, EOR, ADC, STA, LDA, CMP, SBC, LDX, BIT, STY, ASL, ROL, LSR, ROR, STX, DEC, INC, PHP, CLC, PLP, SEC, PHA, CLI, PLA, SEI, DEY, TYA, TAY, CLV, INY, CLD, INX, SED, TXA, TXS, TAX, TSX, DEX, NOP, JMP };
     enum m_AddressingMode { noAddress, A, absolute, absX, absY, imm, implied, ind, Xind, indY, rel, zpg, zpgX, zpgY };
+    enum m_IndirectMode { direct, all, zpgIndirect};
     struct m_InstructionStruct {
-        m_Instruction inst;
-        m_AddressingMode addressingMode;
+        m_Instruction inst = noInst;
+        m_AddressingMode addressingMode = noAddress;
+        m_IndirectMode indirectMode = direct;
     };
     m_InstructionStruct getInstruction(uint8_t instructionOpCode);
 public:
