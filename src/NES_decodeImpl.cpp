@@ -73,7 +73,7 @@ NES_CPU::m_InstructionStruct NES_CPU::getInstruction(uint8_t instructionOpCode) 
         case 32:
             return m_InstructionStruct{JSR,absolute};
         case 33:
-            return m_InstructionStruct{AND,noAddress};
+            return m_InstructionStruct{AND,zpgX};
         case 34:
             return m_InstructionStruct{noInst,noAddress};
         case 35:
@@ -95,49 +95,49 @@ NES_CPU::m_InstructionStruct NES_CPU::getInstruction(uint8_t instructionOpCode) 
         case 43:
             return m_InstructionStruct{noInst,noAddress};
         case 44:
-            return m_InstructionStruct{AND,absolute};
+            return m_InstructionStruct{BIT,absolute};
         case 45:
-            return m_InstructionStruct{ROL,absolute};
+            return m_InstructionStruct{AND,absolute};
         case 46:
-            return m_InstructionStruct{noInst,noAddress};
+            return m_InstructionStruct{ROL,absolute};
         case 47:
-            return m_InstructionStruct{BMI,rel};
-        case 48:
-            return m_InstructionStruct{AND,zpgY};
-        case 49:
             return m_InstructionStruct{noInst,noAddress};
+        case 48:
+            return m_InstructionStruct{BMI,rel};
+        case 49:
+            return m_InstructionStruct{AND,zpgY};
         case 50:
             return m_InstructionStruct{noInst,noAddress};
         case 51:
             return m_InstructionStruct{noInst,noAddress};
         case 52:
-            return m_InstructionStruct{AND,zpgX};
+            return m_InstructionStruct{noInst,noAddress};
         case 53:
-            return m_InstructionStruct{ROL,zpgX};
+            return m_InstructionStruct{AND,zpgX};
         case 54:
-            return m_InstructionStruct{noInst,noAddress};
+            return m_InstructionStruct{ROL,zpgX};
         case 55:
-            return m_InstructionStruct{SEC,noAddress};
-        case 56:
-            return m_InstructionStruct{AND,absY};
-        case 57:
             return m_InstructionStruct{noInst,noAddress};
+        case 56:
+            return m_InstructionStruct{SEC,noAddress};
+        case 57:
+            return m_InstructionStruct{AND,absY};
         case 58:
             return m_InstructionStruct{noInst,noAddress};
         case 59:
             return m_InstructionStruct{noInst,noAddress};
         case 60:
-            return m_InstructionStruct{AND,absX};
-        case 61:
-            return m_InstructionStruct{ROL,absX};
-        case 62:
             return m_InstructionStruct{noInst,noAddress};
+        case 61:
+            return m_InstructionStruct{AND,absX};
+        case 62:
+            return m_InstructionStruct{ROL,absX};
         case 63:
-            return m_InstructionStruct{RTI, noAddress};
+            return m_InstructionStruct{noInst,noAddress};
         case 64:
-            return m_InstructionStruct{EOR,zpgX};
+            return m_InstructionStruct{RTI, noAddress};
         case 65:
-            break;
+            return m_InstructionStruct{EOR,zpgX};
         case 66:
             break;
         case 67:
